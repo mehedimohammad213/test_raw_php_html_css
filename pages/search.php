@@ -17,11 +17,11 @@
             <br>
             <div class="navbar">
                <ul style="margin-left:20px">
-                  <li><a href="home.php"><b>Criminal Information</b></a></li>
-                  <li><a href="search.php" class="active"><b>Search Records</b></a></li>
-                  <li><a href="criminalList.php"><b>List of Criminals</b></a></li>
-                  <li><a href="../Officers/offList.php"><b>List of Officers</b></a></li>
-            <li><a href="analysis.php"><b>Analytics</b></a></li>
+                  <li><a href="Criminal/home.php"><b>Criminal Information</b></a></li>
+                  <li><a href="Criminal/search.php" class="active"><b>Search Records</b></a></li>
+                  <li><a href="Criminal/criminalList.php"><b>List of Criminals</b></a></li>
+                  <li><a href="Officers/offList.php"><b>List of Officers</b></a></li>
+            <li><a href="Criminal/analysis.php"><b>Analytics</b></a></li>
                </ul>
             </div>
             <div class="searchGroup" >

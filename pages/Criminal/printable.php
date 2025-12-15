@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-                  include("../config/config.php");
+                  include("../../config/config.php");
                   session_start();
 
                   if(isset($_SESSION['data'])) {
@@ -49,7 +49,7 @@
                                   }
                                   echo '
                       <tr>
-                          <td><img src="../'.$imgPath.'" width="100" onerror="this.src=\'../images/download.jpg\'"></td>
+                          <td><img src="../../'.$imgPath.'" width="100" onerror="this.src=\'../../images/download.jpg\'"></td>
                           <td>'.$row['id'].'</td>
                           <td>'.$row['name'].'</td>
                            <td>'.$row['offname'].'</td>

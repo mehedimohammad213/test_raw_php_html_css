@@ -5,7 +5,7 @@
       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
       <title>Criminal Management System - Home</title>
       <meta name='viewport' content='width=device-width, initial-scale=1'>
-      <link rel='stylesheet' type='text/css' media='screen' href='../css/style_1.css'>
+      <link rel='stylesheet' type='text/css' media='screen' href='../../css/style_1.css'>
       <script type="text/javascript">
          function submitBtn()
          {
@@ -61,16 +61,16 @@
    <body class="app-shell">
       <div class="top-bar">
          <button name="logout" class="logout-btn">
-            <img src="../images/logout.png" alt="Logout icon">
-            <a href="../auth/logout.php">Log out</a>
+            <img src="../../images/logout.png" alt="Logout icon">
+            <a href="../../auth/logout.php">Log out</a>
          </button>
       </div>
       <div class="container">
       <div class="finaldiv">
          <div class="header-row">
-            <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+            <span class="head1"><img src="../../images/police_logo.png" alt="Police logo left"></span>
             <span class="head_txt">Criminal Management System</span>
-            <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+            <span class="head2"><img src="../../images/police_logo.png" alt="Police logo right"></span>
          </div>
          <div class="navbar">
             <ul>
@@ -205,17 +205,17 @@
    </body>
 </html>
 <?php
-   include("../config/config.php");
+   include("../../config/config.php");
    $id=$name=$offName=$crime=$dob=$arrDate=$crimeDate=$sex=$address=$pic=$folder=$fname=$more="";
    if(isset($_POST['submit'])){
        $fname = "";
-       $folder = "../images/download.jpg"; // Default image
+       $folder = "images/download.jpg"; // Default image
 
        if(isset($_FILES['my_img']) && $_FILES['my_img']['error'] == 0 && $_FILES['my_img']['size'] > 0){
            $fname=$_FILES['my_img']['name'];
            $tmpname=$_FILES['my_img']['tmp_name'];
            $folder="images/".$fname;
-           $upload_path = __DIR__ . "/../images/".$fname;
+           $upload_path = __DIR__ . "/../../images/".$fname;
            if(move_uploaded_file($tmpname, $upload_path)){
                // File uploaded successfully
            } else {

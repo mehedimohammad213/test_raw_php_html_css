@@ -22,7 +22,7 @@
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
 
-         header("location: /Officers/addOfficer.php");
+        header("location: /pages/Officers/addOfficer.php");
       }else {
          echo "<script>alert('".'Invalid Username or Password'."')</script>";
       }

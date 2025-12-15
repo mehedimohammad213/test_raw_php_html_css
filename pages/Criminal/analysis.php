@@ -5,7 +5,7 @@
       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
       <title>Criminal Management System - Home</title>
       <meta name='viewport' content='width=device-width, initial-scale=1'>
-      <link rel='stylesheet' type='text/css' media='screen' href='../css/style_1.css'>
+      <link rel='stylesheet' type='text/css' media='screen' href='../../css/style_1.css'>
       <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
       <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
       <style type="text/css">
@@ -20,16 +20,16 @@
    <body class="app-shell">
       <div class="top-bar">
          <button name="logout" class="logout-btn">
-            <img src="../images/logout.png" alt="Logout icon">
-            <a href="../auth/logout.php">Log out</a>
+            <img src="../../images/logout.png" alt="Logout icon">
+            <a href="../../auth/logout.php">Log out</a>
          </button>
       </div>
       <div class="container">
          <div class="finaldiv">
             <div class="header-row">
-               <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+               <span class="head1"><img src="../../images/police_logo.png" alt="Police logo left"></span>
                <span class="head_txt">Criminal Management System</span>
-               <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+               <span class="head2"><img src="../../images/police_logo.png" alt="Police logo right"></span>
             </div>
             <div class="navbar">
                <ul>
@@ -41,7 +41,7 @@
                </ul>
                <div id="contain"></div>
             <?php
-                  include("../config/config.php");
+                  include("../../config/config.php");
                   $result="ABC";
                   $total="";
                   $temp="";

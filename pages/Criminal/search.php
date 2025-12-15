@@ -5,21 +5,21 @@
       <meta http-equiv='X-UA-Compatible' content='IE=edge'>
       <title>Criminal Management System - Home</title>
       <meta name='viewport' content='width=device-width, initial-scale=1'>
-      <link rel='stylesheet' type='text/css' media='screen' href='../css/style_1.css'>
+      <link rel='stylesheet' type='text/css' media='screen' href='../../css/style_1.css'>
    </head>
    <body class="app-shell">
       <div class="top-bar">
          <button name="logout" class="logout-btn">
-            <img src="../images/logout.png" alt="Logout icon">
-            <a href="../auth/logout.php">Log out</a>
+            <img src="../../images/logout.png" alt="Logout icon">
+            <a href="../../auth/logout.php">Log out</a>
          </button>
       </div>
       <div class="container">
          <div class="finaldiv">
             <div class="header-row">
-               <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+               <span class="head1"><img src="../../images/police_logo.png" alt="Police logo left"></span>
                <span class="head_txt">Criminal Management System</span>
-               <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+               <span class="head2"><img src="../../images/police_logo.png" alt="Police logo right"></span>
             </div>
             <div class="navbar">
                <ul>
@@ -33,10 +33,10 @@
             <div class="searchGroup">
                <form method="post" action="">
                   <input type="text" class="searchBar" placeholder="Search criminals by name or ID" name="search" value="<?php echo isset($_POST['search']) ? htmlspecialchars($_POST['search']) : ''; ?>">
-                  <button type="submit" class="searchBtn"><img src="../images/search.png" alt="Search"></button>
+                  <button type="submit" class="searchBtn"><img src="../../images/search.png" alt="Search"></button>
                </form>
                <?php
-                  include("../config/config.php");
+                  include("../../config/config.php");
                   session_start();
 
                   if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['search']) && !empty(trim($_POST['search'])))
@@ -85,7 +85,7 @@
                               }
                               echo '
                   <tr>
-                      <td><img src="../'.$imgPath.'" width="100" height="100" style="object-fit: cover;" onerror="this.src=\'../images/download.jpg\'"></td>
+                      <td><img src="../../'.$imgPath.'" width="100" height="100" style="object-fit: cover;" onerror="this.src=\'../../images/download.jpg\'"></td>
                       <td>'.$row['id'].'</td>
                       <td>'.$row['name'].'</td>
                        <td>'.$row['offname'].'</td>

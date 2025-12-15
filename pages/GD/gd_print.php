@@ -1,5 +1,5 @@
 <?php
-   include("../config/config.php");
+   include("../../config/config.php");
 
    $id = isset($_GET['id']) ? trim($_GET['id']) : "";
    if($id === ""){

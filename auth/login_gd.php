@@ -18,7 +18,7 @@
 
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
-         header("location: /GD/gd_create.php");
+        header("location: /pages/GD/gd_create.php");
          exit;
       } else {
          echo "<script>alert('Invalid Username or Password')</script>";
