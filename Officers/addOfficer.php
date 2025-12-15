@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Criminal Management System - Home</title>
+    <title>Criminal Management System - Officers</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/style_1.css'>
     <script type="text/javascript">
@@ -17,23 +17,28 @@
         }
     </script>
 </head>
-<body>
-    <button name="logout" style="margin-left: 1424px;"><img src="../images/logout.png" style="width:10px"><a href = "../auth/logout.php">Log out</a></button>
+<body class="app-shell">
+    <div class="top-bar">
+        <button name="logout" class="logout-btn">
+            <img src="../images/logout.png" alt="Logout icon">
+            <a href="../auth/logout.php">Log out</a>
+        </button>
+    </div>
     <div class="container">
         <div class="finaldiv">
-        <span class="head1"><img src="../images/police_logo.png" width="16.2%"></span>
-        <span class="head_txt">Criminal Management System</span>
-        <span class="head2"><img src="../images/police_logo.png" width="38%"></span>
-
-    <br>
+        <div class="header-row">
+            <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+            <span class="head_txt">Criminal Management System</span>
+            <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+        </div>
     <div class="navbar">
-        <ul style="margin-left:135px">
+        <ul>
             <li><a href="addOfficer.php" class="active"><b>Add Officer</b></a></li>
             <li><a href="searchOff.php" ><b>Search Officer</b></a></li>
             <li><a href="weapon.php"><b>Weapons Assigned</b></a></li>
         </ul>
     </div>
-        <div id="crimeInfo" style="background-image: url('../images/police_logo_1.png'); background-repeat:no-repeat;margin-top: 50px; background-size: 60%;">
+        <div id="crimeInfo">
             <form id="offInfo" method="post">
                 <table>
                     <tr>

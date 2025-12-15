@@ -8,22 +8,22 @@
 </head>
 <body>
     <div id="box1">
-        <span id="sp1"><img src="images/logo.jpg"  width="15%"></span>
-        <br>
-        <br>
+        <span id="sp1"><img src="images/logo.jpg"  width="15%" alt="Criminal Management Logo"></span>
+        <div class="auth-title">Welcome</div>
+        <div class="auth-subtitle">Choose which system you want to access</div>
         <form method="post">
             <div class="btn_div">
-                <button class="btn" name="btn1" style="width: 250px;height:60px;margin-left: -75px;">
+                <button class="btn" name="btn1">
                     Login to Criminal Management System
                 </button>
             </div>
             <div class="btn_div">
-                <button class="btn" name="btn2" style="width: 250px;height:60px;margin-left: -75px;">
+                <button class="btn" name="btn2">
                     Login to Police Officer Management System
                 </button>
             </div>
             <div class="btn_div">
-                <button class="btn" name="btn3" style="width: 250px;height:60px;margin-left: -75px;">
+                <button class="btn" name="btn3">
                     Login to General Diary
                 </button>
             </div>

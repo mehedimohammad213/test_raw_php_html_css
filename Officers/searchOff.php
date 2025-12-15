@@ -3,21 +3,26 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Criminal Management System - Home</title>
+    <title>Criminal Management System - Search Officer</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/style_1.css'>
 </head>
-<body>
-    <button name="logout" style="margin-left: 1424px;"><img src="../images/logout.png" style="width:10px"><a href = "../auth/logout.php">Log out</a></button>
-    <div class="container" style="height:800px;">
+<body class="app-shell">
+    <div class="top-bar">
+        <button name="logout" class="logout-btn">
+            <img src="../images/logout.png" alt="Logout icon">
+            <a href="../auth/logout.php">Log out</a>
+        </button>
+    </div>
+    <div class="container">
         <div class="finaldiv">
-        <span class="head1"><img src="../images/police_logo.png" width="16.2%"></span>
-        <span class="head_txt">Criminal Management System</span>
-        <span class="head2"><img src="../images/police_logo.png" width="38%"></span>
-
-    <br>
+        <div class="header-row">
+            <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+            <span class="head_txt">Criminal Management System</span>
+            <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+        </div>
     <div class="navbar">
-        <ul style="margin-left:135px">
+        <ul>
             <li><a href="addOfficer.php"><b>Add Officer</b></a></li>
             <li><a href="searchOff.php" class="active"><b>Search Officer</b></a></li>
             <li><a href="weapon.php"><b>Weapons Assigned</b></a></li>
@@ -25,16 +30,15 @@
     </div>
         <span class="searchGroup">
             <form method="post">
-            <input type="text" class="searchBar" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Criminal's By Name" name="search">
-            <button class="searchBtn"><img src="../images/search.png" width="50%"></button>
-            <img src="../images/police_logo_1.png" style="margin-left:-90px;margin-top: 85px;">
+            <input type="text" class="searchBar" placeholder="Search officers by name" name="search">
+            <button class="searchBtn" type="submit"><img src="../images/search.png" alt="Search"></button>
         </form>
         <?php
         include("../config/config.php");
         if($_SERVER['REQUEST_METHOD']=='POST')
         {
             $data=SQLite3::escapeString($_POST['search']);
-            $q1="SELECT offName, offID,ID,contact,gender,weapon,role FROM officer WHERE offName='$data'";
+            $q1="SELECT offName, offID,ID,contact,gender,weapon,role FROM officer WHERE offName LIKE '%$data%' COLLATE NOCASE";
             $result=$db->query($q1);
             if($result)
             {
@@ -49,7 +53,8 @@
                 }
 
                 echo '
-        <table border="5" style="position:absolute; left:-50px;top:200px;">
+        <div class="table-wrapper">
+        <table>
         <tr>
             <th>Officer Name</th>
             <th>Officer ID</th>
@@ -70,9 +75,7 @@
               <td>'.$row['gender'].'</td>
                <td>'.$row['weapon'].'</td>
                 <td>'.$row['role'].'</td>
-        </tr>
-
-    ';
+        </tr>';
                 }
             }
         }

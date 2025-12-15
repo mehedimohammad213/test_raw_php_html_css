@@ -7,16 +7,22 @@
       <meta name='viewport' content='width=device-width, initial-scale=1'>
       <link rel='stylesheet' type='text/css' media='screen' href='../css/style_1.css'>
    </head>
-   <body>
-      <button name="logout" style="margin-left: 1424px;"><img src="../images/logout.png" style="width:10px"><a href = "../auth/logout.php">Log out</a></button>
-      <div class="container" style="height:980px;">
+   <body class="app-shell">
+      <div class="top-bar">
+         <button name="logout" class="logout-btn">
+            <img src="../images/logout.png" alt="Logout icon">
+            <a href="../auth/logout.php">Log out</a>
+         </button>
+      </div>
+      <div class="container">
          <div class="finaldiv">
-            <span class="head1"><img src="../images/police_logo.png" width="16.2%"></span>
-            <span class="head_txt">Criminal Management System</span>
-            <span class="head2"><img src="../images/police_logo.png" width="38%"></span>
-            <br>
+            <div class="header-row">
+               <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+               <span class="head_txt">Criminal Management System</span>
+               <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+            </div>
             <div class="navbar">
-               <ul style="margin-left:20px">
+               <ul>
                   <li><a href="home.php"><b>Criminal Information</b></a></li>
                   <li><a href="search.php" class="active"><b>Search Records</b></a></li>
                   <li><a href="criminalList.php"><b>List of Criminals</b></a></li>
@@ -24,11 +30,10 @@
             <li><a href="analysis.php"><b>Analytics</b></a></li>
                </ul>
             </div>
-            <div class="searchGroup" >
+            <div class="searchGroup">
                <form method="post" action="">
-                  <input type="text" class="searchBar" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Criminal's By Name" name="search" value="<?php echo isset($_POST['search']) ? htmlspecialchars($_POST['search']) : ''; ?>">
-                  <button type="submit" class="searchBtn"><img src="../images/search.png" width="50%"></button>
-                  <img src="../images/police_logo_1.png" style="position:absolute;top:140px;margin-top: -90px; background-size: 90%;margin-left: -50px; height:469px">
+                  <input type="text" class="searchBar" placeholder="Search criminals by name or ID" name="search" value="<?php echo isset($_POST['search']) ? htmlspecialchars($_POST['search']) : ''; ?>">
+                  <button type="submit" class="searchBtn"><img src="../images/search.png" alt="Search"></button>
                </form>
                <?php
                   include("../config/config.php");
@@ -54,8 +59,8 @@
                           if (count($rows) <= 0) {
                               echo "<script>alert('Record Not Found')</script>";
                           } else {
-                              echo '<div style="overflow-x: auto; margin-top: 20px;">
-                              <table border="5" style="position:relative;left:-180px;top: 65px; background-color: white; z-index: 1;">
+                              echo '<div class="table-wrapper">
+                              <table>
                               <thead>
                           <tr>
                               <th>Criminal Image</th>

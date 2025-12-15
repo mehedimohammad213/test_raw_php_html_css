@@ -1,150 +1,296 @@
-/*Index Page*/
+/* Global layout for main app pages */
 body{
-    background: url('../images/log_back.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url('../images/log_back.png') center/cover no-repeat fixed;
+    background-color: #050711;
 }
+
+.app-shell{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.top-bar{
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 16px 0;
+}
+
+.logout-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+.logout-btn img{
+    width: 14px;
+    height: 14px;
+}
+
 .container{
-    position: absolute;
-    border:2px solid white;
-    background: white;
-    margin: 240px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    height: 800px;
-    width: 1000px;
-    padding: 16px;
+    max-width: 1200px;
+    margin: 24px auto 32px;
+    padding: 20px 20px 28px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
-.head1{
-    height: 55px;
-    position: absolute;
-    left: 120px;
-    margin-top: 5px;
+
+.finaldiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
+.header-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.head1 img,
+.head2 img{
+    max-height: 64px;
+    height: auto;
+}
+
 .head_txt{
-    font-family: Stencil Std, fantasy;
-    position: absolute;
-    left: 202px;
-    margin-top: 10px;
-    height: 55px;
-    font-size: 50px;
+    font-family: "Stencil Std", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 34px;
+    letter-spacing: 1px;
+    text-align: center;
+    flex: 1;
 }
-.head2{
-    height: 55px;
-    position: absolute;
-    left: 812px;
-    margin-top: 5px;
-}
+
 .navbar{
-    border: 2px solid yellow;
-    color: black;
-    font-size: 20px;
+    margin-top: 12px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f4b400, #ffe66d);
+    padding: 8px 14px;
+    font-size: 16px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-weight: 520;
-    height: 30px;
-    width: 880px;
-    padding-top: 5px;
-    margin-top: 100px;
-    margin-left: 45px;
-    background-color: rgb(250, 250, 0);
+    font-weight: 600;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
-ul{
-    list-style-type: none;
+
+.navbar ul{
+    display: flex;
+    gap: 12px;
+    list-style: none;
     margin: 0;
     padding: 0;
+    white-space: nowrap;
 }
-li {
-    display: inline;
-    margin-right: 10px;
-    padding-left: 37px;
-    padding-right: 20px;
-  }
-#crimeInfo{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    margin-left: 270px;
-    padding: 25px;
 
+.navbar li{
+    display: inline-flex;
 }
-#crimeInfo input{
-    height: 19px;
+
+.navbar a{
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #111;
+    transition: background 0.2s ease, color 0.2s ease;
 }
-input, select{
+
+.navbar a:hover{
+    background: rgba(0,0,0,0.08);
+}
+
+.navbar a.active,
+.navbar a .active{
+    background: #111;
+    color: #f4b400;
+}
+
+#crimeInfo{
+    font-size: 16px;
+    padding: 24px 18px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+#crimeInfo table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#crimeInfo td{
+    padding: 4px 6px;
+    vertical-align: top;
+}
+
+#crimeInfo input,
+#crimeInfo select,
+#crimeInfo textarea{
+    width: 100%;
+    font-size: 15px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px
+    font-size: 15px;
 }
+
 .submitBtn{
-    background-color: yellow;
-    color: black;
-    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1f3b7b, #101b44);
+    color: #ffffff;
+    font-size: 16px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     border: none;
-    height: 30px;
-    width: 90px;
-    border: 2px white;
-    border-radius: 5px;
-    margin: 30px;
-    margin-left: 145px;
+    height: 40px;
+    min-width: 120px;
+    padding: 0 18px;
+    border-radius: 999px;
+    margin-top: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
 }
+
 .submitBtn:hover{
-    background-color: white;
-    color: rgb(240, 240, 0);
-    border: 2px solid yellow;
+    background: #ffffff;
+    color: #1f3b7b;
+    border: 1px solid #1f3b7b;
+    transform: translateY(-1px);
 }
+
 a{
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
+
 a:active{
-    color: red;
+    color: #c62828;
 }
 
 .active{
-    color: red;
+    color: #c62828;
 }
 
-/*Search Page*/
-.searchBar{
-    height: 30px;
-    width: 300px;
-    position: absolute;
+/* Search Page */
+.searchGroup{
+    margin-top: 32px;
+    padding: 18px 0;
 }
+
+.searchBar{
+    height: 40px;
+    width: 100%;
+    max-width: 420px;
+    padding: 0 40px 0 14px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
 .searchBtn{
-    height:35px;
-    width:69px;
+    position: relative;
+    margin-left: -44px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
     border: none;
     background: transparent;
-    position:absolute;
-    left: 295px;
-    top: 3px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
-.searchGroup{
 
-    height: 135px;
-    width: 10px;
-    position: absolute;
-    top: 200px;
-    left: 335px;
-
+.searchBtn img{
+    max-width: 22px;
 }
-/*Add officer Page*/
+
+/* Tables */
+.table-wrapper{
+    margin-top: 24px;
+    overflow-x: auto;
+}
+
+.table-wrapper table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.table-wrapper th,
+.table-wrapper td{
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.table-wrapper th{
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+/* Add officer Page */
 .submitBtn1{
-    width: 125px;
-    background-color: yellow;
-    color: black;
-    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    background: linear-gradient(135deg, #1f3b7b, #101b44);
+    color: #ffffff;
+    font-size: 16px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    height: 30px;
-    border: 2px white;
-    border-radius: 5px;
-    margin: 45px;
-    margin-left: 145px;
+    height: 40px;
+    border-radius: 999px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: all 0.2s ease;
 }
+
 .submitBtn1:hover{
-    background-color: white;
-    color: rgb(240, 240, 0);
-    border: 2px solid yellow;
-    width: 125px;
+    background: #ffffff;
+    color: #1f3b7b;
+    border: 1px solid #1f3b7b;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px){
+    .container{
+        margin: 16px;
+        padding: 16px 14px 22px;
+    }
+
+    .head_txt{
+        font-size: 26px;
+    }
+
+    .navbar{
+        font-size: 14px;
+    }
+
+    #crimeInfo{
+        padding: 18px 12px;
+    }
 }

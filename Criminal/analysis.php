@@ -17,23 +17,29 @@
          }
       </style>
    </head>
-   <body>
-      <button name="logout" style="margin-left: 1424px;"><img src="../images/logout.png" style="width:10px"><a href = "../auth/logout.php">Log out</a></button>
-      <div class="container" style="height:780px;">
+   <body class="app-shell">
+      <div class="top-bar">
+         <button name="logout" class="logout-btn">
+            <img src="../images/logout.png" alt="Logout icon">
+            <a href="../auth/logout.php">Log out</a>
+         </button>
+      </div>
+      <div class="container">
          <div class="finaldiv">
-            <span class="head1"><img src="../images/police_logo.png" width="16.2%"></span>
-            <span class="head_txt">Criminal Management System</span>
-            <span class="head2"><img src="../images/police_logo.png" width="38%"></span>
-            <br>
+            <div class="header-row">
+               <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+               <span class="head_txt">Criminal Management System</span>
+               <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+            </div>
             <div class="navbar">
-               <ul style="margin-left:20px">
+               <ul>
                   <li><a href="home.php"><b>Criminal Information</b></a></li>
                   <li><a href="search.php"><b>Search Records</b></a></li>
                   <li><a href="criminalList.php"><b>List of Criminals</b></a></li>
                   <li><a href="../Officers/offList.php"><b>List of Officers</b></a></li>
             <li><a href="analysis.php" class="active"><b>Analytics</b></a></li>
                </ul>
-               <div id="contain" style=""></div>
+               <div id="contain"></div>
             <?php
                   include("../config/config.php");
                   $result="ABC";

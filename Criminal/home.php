@@ -58,16 +58,22 @@
          }
       </script>
    </head>
-   <body>
-      <button name="logout" style="margin-left: 1424px;"><img src="../images/logout.png" style="width:10px"><a href = "../auth/logout.php">Log out</a></button>
-      <div class="container" style="height:980px;">
+   <body class="app-shell">
+      <div class="top-bar">
+         <button name="logout" class="logout-btn">
+            <img src="../images/logout.png" alt="Logout icon">
+            <a href="../auth/logout.php">Log out</a>
+         </button>
+      </div>
+      <div class="container">
       <div class="finaldiv">
-         <span class="head1"><img src="../images/police_logo.png" width="16.2%"></span>
-         <span class="head_txt">Criminal Management System</span>
-         <span class="head2"><img src="../images/police_logo.png" width="38%"></span>
-         <br>
-         <div class="navbar" style="background-color:yellow;">
-            <ul style="margin-left:20px">
+         <div class="header-row">
+            <span class="head1"><img src="../images/police_logo.png" alt="Police logo left"></span>
+            <span class="head_txt">Criminal Management System</span>
+            <span class="head2"><img src="../images/police_logo.png" alt="Police logo right"></span>
+         </div>
+         <div class="navbar">
+            <ul>
                <li><a href="home.php" class="active"><b>Criminal Information</b></a></li>
                <li><a href="search.php"><b>Search Records</b></a></li>
                <li><a href="criminalList.php"><b>List of Criminals</b></a></li>
@@ -75,7 +81,7 @@
                <li><a href="analysis.php"><b>Analytics</b></a></li>
             </ul>
          </div>
-         <form id="crimeInfo" method="post" style="position:absolute;top:140px;background-image: url('../images/police_logo_1.png'); background-repeat:no-repeat;margin-top: 50px; background-size: 90%; width: 50%;height:469px" enctype="multipart/form-data">
+         <form id="crimeInfo" method="post" enctype="multipart/form-data">
             <table >
                <tr>
                   <td>Criminals Image</td>
