@@ -12,8 +12,21 @@
         <br>
         <br>
         <form method="post">
-            <div class="btn_div"><button  class="btn" name="btn1" style="width: 250px;height:60px  ;margin-left: -75px;">Login to Criminal Management System</button></div>
-            <div class="btn_div"><button  class="btn" name="btn2" style="width: 250px;height:60px ;margin-left: -75px;">Login to Police Officer Management System</button></div>
+            <div class="btn_div">
+                <button class="btn" name="btn1" style="width: 250px;height:60px;margin-left: -75px;">
+                    Login to Criminal Management System
+                </button>
+            </div>
+            <div class="btn_div">
+                <button class="btn" name="btn2" style="width: 250px;height:60px;margin-left: -75px;">
+                    Login to Police Officer Management System
+                </button>
+            </div>
+            <div class="btn_div">
+                <button class="btn" name="btn3" style="width: 250px;height:60px;margin-left: -75px;">
+                    Login to General Diary
+                </button>
+            </div>
         </form>
     </div>
 </body>
@@ -22,8 +35,12 @@
 
 if (isset($_POST['btn1'])) {
     header("location: /auth/login1.php");
-}
-else if (isset($_POST['btn2'])){
+    exit;
+} elseif (isset($_POST['btn2'])) {
     header("location: /auth/login2.php");
+    exit;
+} elseif (isset($_POST['btn3'])) {
+    header("location: /auth/login_gd.php");
+    exit;
 }
 ?>

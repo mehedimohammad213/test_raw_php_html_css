@@ -22,7 +22,7 @@
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
 
-         header("location: /pages/home.php");
+         header("location: /Criminal/home.php");
       }else {
          echo "<script>alert('".'Invalid Username or Password'."')</script>";
       }

@@ -46,6 +46,21 @@ $db->exec("CREATE TABLE IF NOT EXISTS `users` (
   `pass` TEXT NOT NULL
 )");
 
+// General Diary entries table
+$db->exec("CREATE TABLE IF NOT EXISTS `gd_entries` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `entry_no` TEXT NOT NULL,
+  `entry_datetime` TEXT NOT NULL,
+  `officer_id` INTEGER NOT NULL,
+  `station` TEXT NOT NULL,
+  `type` TEXT NOT NULL,
+  `subject` TEXT NOT NULL,
+  `details` TEXT NOT NULL,
+  `related_criminal_id` INTEGER,
+  FOREIGN KEY(`officer_id`) REFERENCES `officer`(`offID`),
+  FOREIGN KEY(`related_criminal_id`) REFERENCES `info`(`id`)
+)");
+
                                 // Insert default data - 5 criminals
 $db->exec("INSERT INTO `info` (`id`, `name`, `offname`, `crime`, `dob`, `arrDate`, `crimeDate`, `sex`, `address`, `img`, `more`) VALUES
 (1001, 'Glenn Quagmire', 'Joe Swanson', 'Rape', '1989-02-11', '2002-06-01', '2001-09-01', 'M', 'Quahog, Rhode Island', '../images/download.jpg', '375'),
@@ -64,6 +79,14 @@ $db->exec("INSERT INTO `officer` (`offName`, `offID`, `ID`, `contact`, `gender`,
 
 $db->exec("INSERT INTO `users` (`uname`, `pass`) VALUES
 ('admin', 'admin')");
+
+// Insert default data - 5 GD entries
+$db->exec("INSERT INTO `gd_entries` (`entry_no`, `entry_datetime`, `officer_id`, `station`, `type`, `subject`, `details`, `related_criminal_id`) VALUES
+('GD-1001', '2024-01-10 09:30', 1091, 'Quahog Police Station', 'Complaint', 'Noise complaint from neighborhood', 'Citizen reported loud music and disturbance in the neighborhood. Officers dispatched and situation handled peacefully.', 1001),
+('GD-1002', '2024-02-05 14:15', 1092, 'Central City Police Station', 'Information', 'Suspicious vehicle spotted', 'Informant reported a suspicious van circling the commercial area multiple times. Details recorded for future reference.', 1002),
+('GD-1003', '2024-03-12 20:45', 1093, 'Harbor Police Station', 'Patrol Note', 'Night patrol status update', 'Regular night patrol conducted in assigned sector. No major incidents observed. Minor traffic violations handled on the spot.', 1003),
+('GD-1004', '2024-04-18 11:05', 1094, 'Downtown Police Station', 'Complaint', 'Lost wallet reported', 'Complainant reported loss of wallet containing ID and bank cards in market area. Statement recorded and CCTV footage requested.', 1004),
+('GD-1005', '2024-05-22 16:30', 1095, 'North Zone Police Station', 'Misc', 'Internal meeting summary', 'Briefing conducted with all duty officers regarding upcoming festival security arrangements and deployment plan.', 1005)");
 
 $db->close();
 

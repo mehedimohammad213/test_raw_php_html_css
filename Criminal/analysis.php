@@ -31,7 +31,7 @@
                   <li><a href="search.php"><b>Search Records</b></a></li>
                   <li><a href="criminalList.php"><b>List of Criminals</b></a></li>
                   <li><a href="../Officers/offList.php"><b>List of Officers</b></a></li>
-                  <li><a href="analysis.php" class="active"><b>Analytics</b></a></li>
+            <li><a href="analysis.php" class="active"><b>Analytics</b></a></li>
                </ul>
                <div id="contain" style=""></div>
             <?php
